@@ -51,6 +51,7 @@
 							<?php if(session('rolLogged') == 'admin'):?>
 								<li><a class="dropdown-item" href="<?= site_url('/productos') ?>">Registrar productos</a></li>
 								<li><a class="dropdown-item" href="<?= site_url('/animales') ?>">Registrar animales</a></li>
+                                <li><a class="dropdown-item" href="<?= site_url('users/list') ?>">Lista de usuarios</a></li>
 							<?php endif ?>
 							<li><a class="dropdown-item" href="#">Perfil</a></li>
 							<li><hr class="dropdown-divider"></li>
@@ -66,7 +67,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <h2 class="my-4">Listado de animales</h2>
             <?php if(session('rolLogged') == 'admin'):?>
-                <a href="<?= site_url('/productos')?>" class="btnbase btnprimary-outline"><i class="fas fa-plus-circle me-2"></i>Registrar animal</a>
+                <a href="<?= site_url('/animales')?>" class="btnbase btnprimary-outline"><i class="fas fa-plus-circle me-2"></i>Registrar animal</a>
             <?php endif ?>
         </div>
         <?php 
@@ -85,7 +86,7 @@
             </div>
         <?php unset ($_SESSION['mensajeIncorrect']); ?>
         <?php endif ?>
-        <div class="row row-cols-1 row-cols-md-5 g-4">
+        <div class="row row-cols-1 row-cols-md-5 g-4 mb-5">
             <?php foreach($animales as $animal):?>
                 <div class="col card-product">
                     <div class="card h-100">

@@ -81,7 +81,9 @@ class Auth extends BaseController{
             }else{
                 // return redirect()->to('auth/register')->with('success', '¡Genial, te haz registrado!');
                 $last_id = $usersModel->insertID();
+                $user_name = $values['name'];
                 session()->set('loggedUser', $last_id);
+                session()->set('nameLogged', $user_name);
                 return redirect()->to('/');
             }
         }
@@ -134,6 +136,7 @@ class Auth extends BaseController{
     function logout(){
         if(session()->has('loggedUser')){
             session()->remove('loggedUser');
+            session()->remove('rolLogged');
             return redirect()->to('/auth?access=out')->with('fail','Haz cerrado sesión');
         }
     }

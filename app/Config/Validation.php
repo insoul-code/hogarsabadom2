@@ -63,6 +63,12 @@ class Validation
         'edad' => 'required'
     ];
 
+    public $formularioEdicionUser = [
+        'name' => 'required',
+        'email' => 'required',
+        'rol' => 'required'
+    ];
+
     //--------------------------------------------------------------------
     // Rules
     //--------------------------------------------------------------------

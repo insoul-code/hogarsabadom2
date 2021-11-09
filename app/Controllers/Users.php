@@ -46,4 +46,55 @@ class Users extends BaseController
             return redirect()->to(site_url('users/list'))->with('mensaje',$mensaje);
         }
     }
+
+    public function eliminar($id){
+        try{
+            $modelo= new \App\Models\UsersModel();
+
+            $modelo->where('id', $id)->delete();
+            //Entrego una respuesta
+            $mensaje = "Usuario eliminado correctamente";
+            return redirect()->to(site_url('users/list'))->with('mensaje',$mensaje);
+
+        }catch(\Exception $error){
+            $mensaje=$error->getMessage();
+            return redirect()->to(site_url('users/list'))->with('mensaje',$mensaje);
+        }
+    }
+
+    public function editar($id){
+
+        $nombre=$this->request->getPost("name");
+        $email=$this->request->getPost("email");
+        $rol=$this->request->getPost("rol");
+
+        // Se aplican validaciones
+        if($this->validate('formularioEdicionUser')){
+            try{
+                //Sacar una copia de la clase
+                $modelo= new \App\Models\UsersModel();
+
+                //Armo el paquete de datos a registrar
+                $datos=array(
+                    "name"=>$nombre,
+                    "email"=>$email,
+                    "rol"=>$rol
+                );
+
+                //Agrego los datos
+                $modelo->update($id, $datos);
+
+                //Entrego una respuesta
+                $mensaje = "Usuario editado correctamente";
+                return redirect()->to(site_url('users/list'))->with('mensaje',$mensaje);
+
+            }catch(\Exception $error){
+                $mensaje=$error->getMessage();
+                return redirect()->to(site_url('users/list'))->with('mensaje',$mensaje);
+            }
+        }else{
+            $mensaje="Campos sin llenar mi fai";
+            return redirect()->to(site_url('users/list'))->with('mensaje',$mensaje);
+        }
+    }
 }

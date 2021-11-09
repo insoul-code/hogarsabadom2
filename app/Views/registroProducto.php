@@ -29,10 +29,10 @@
                             <a class="nav-link" aria-current="page" href="<?= site_url('/')?>">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('/productos')?>">Productos</a>
+                            <a class="nav-link active" href="<?= site_url('/productos/listado')?>">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('/animales')?>">Animales</a>
+                            <a class="nav-link" href="<?= site_url('/animales/listado')?>">Animales</a>
                         </li>
                         <div class="only-mobile">
                             <a href="#" class="btnbase btnlink m-3">Registro</a>
@@ -54,6 +54,7 @@
 							<?php if(session('rolLogged') == 'admin'):?>
 								<li><a class="dropdown-item" href="<?= site_url('/productos') ?>">Registrar productos</a></li>
 								<li><a class="dropdown-item" href="<?= site_url('/animales') ?>">Registrar animales</a></li>
+                                <li><a class="dropdown-item" href="<?= site_url('users/list') ?>">Lista de usuarios</a></li>
 							<?php endif ?>
 							<li><a class="dropdown-item" href="#">Perfil</a></li>
 							<li><hr class="dropdown-divider"></li>
@@ -65,10 +66,10 @@
             </div>
         </nav>
     </header>
-    <section class="my-4">
+    <section class="mb-4">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2 class="mt-5 mb-3">Registro de productos</h2>
+                <h2 class="my-4">Registro de productos</h2>
                 <a href="<?= site_url('/productos/listado')?>" class="btnbase btnprimary-outline"><i class="fas fa-list-ul me-2"></i>Ver inventario</a>
             </div>
             <div class="card-form">

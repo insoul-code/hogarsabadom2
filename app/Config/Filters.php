@@ -21,6 +21,7 @@ class Filters extends BaseConfig
         'honeypot' => Honeypot::class,
         'AuthCheck' => \App\Filters\AuthCheckFilter::class,
         'AlreadyLoggedIn' => \App\Filters\AlreadyLoggedInFilter::class,
+        'AuthCheckCreate' => \App\Filters\AuthCheckCreate::class,
 
     ];
 

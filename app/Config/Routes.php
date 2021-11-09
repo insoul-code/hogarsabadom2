@@ -32,9 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/productos', 'Producto::index');
 $routes->post('/productos/nuevo', 'Producto::registrar');
-$routes->get('/animales', 'Animal::index');
 $routes->post('/animales/nuevo', 'Animal::registrarAnimal');
 $routes->get('/productos/listado', 'Producto::buscar');
 $routes->get('/productos/eliminar/(:num)', 'Producto::eliminar/$1');
@@ -47,8 +45,13 @@ $routes->post('/users/editar/(:num)', 'Users::editar/$1');
 
 $routes->group('',['filter'=>'AuthCheck'], function($routes){
     $routes->get('/users', 'Users::index');
-    $routes->get('/users/list', 'Users::buscarUsers');
     $routes->get('/users/profile', 'Users::profile');
+});
+
+$routes->group('',['filter'=>'AuthCheckCreate'], function($routes){
+    $routes->get('/productos', 'Producto::index');
+    $routes->get('/animales', 'Animal::index');
+    $routes->get('/users/list', 'Users::buscarUsers');
 });
 
 

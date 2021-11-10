@@ -42,6 +42,7 @@ $routes->get('/animales/eliminar/(:num)', 'Animal::eliminar/$1');
 $routes->post('/animales/editar/(:num)', 'Animal::editar/$1');
 $routes->get('/users/eliminar/(:num)', 'Users::eliminar/$1');
 $routes->post('/users/editar/(:num)', 'Users::editar/$1');
+$routes->post('/animales/editarnotes/(:num)', 'Animal::editarNotes/$1');
 
 $routes->group('',['filter'=>'AuthCheck'], function($routes){
     $routes->get('/users', 'Users::index');

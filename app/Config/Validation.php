@@ -69,6 +69,10 @@ class Validation
         'rol' => 'required'
     ];
 
+    public $formularioEdicionNotes = [
+        'descripcion' => 'required'
+    ];
+
     //--------------------------------------------------------------------
     // Rules
     //--------------------------------------------------------------------

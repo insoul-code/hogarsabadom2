@@ -93,12 +93,13 @@
                         <img src="<?= $animal['foto']?>" class="card-img-top h-100" alt="foto">
                         <div class="card-body">
                             <h5><?= $animal['nombre']?></h5>
-                            <p><?= $animal['edad']?></p>
+                            <p>Edad: <?= $animal['edad']?></p>
                         </div>
                         <?php if(session('rolLogged') == 'admin'):?>
                             <div class="card-footer">
                                 <button href="" class="btnbase btnprimary-outline" data-bs-toggle="modal" data-bs-target="#confirmacion<?= $animal['id']?>"><i class="far fa-trash-alt"></i></button>
                                 <button href="" class="btnbase btnprimary-outline" data-bs-toggle="modal" data-bs-target="#edicion<?= $animal['id']?>"><i class="far fa-edit"></i></button>
+                                <button href="" class="btnbase btnprimary-outline" data-bs-toggle="modal" data-bs-target="#notes<?= $animal['id']?>"><i class="far fa-file-alt"></i></button>
                             </div>
                         <?php endif ?>
                     </div>
@@ -148,6 +149,36 @@
                                             <div class="d-flex justify-content-end">
                                                 <button class="btnbase btnprimary" type="submit">Actualizar</button>
                                             </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="modal fade" id="notes<?= $animal['id']?>">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header fondoPrincipal text-white">
+                                        <h5 class="modal-title">Notas de <?= $animal['nombre']?></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="<?= $animal['foto']?>" alt="Foto animal" class="img-responsive img-fluid w-100">
+                                        </div>
+                                        <div class="col-9">
+                                            <form action="<?= site_url('/animales/editarnotes/'.$animal["id"])?>" method="POST">
+                                                <div class="mb-3">
+                                                    <label for="nombreanimal" class="form-label">Notas del tratamiento</label>
+                                                    <textarea name="descripcion" id="" cols="30" rows="5" class="form-control"><?= $animal['descripcion']?></textarea>
+                                                </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <button class="btnbase btnprimary" type="submit">Actualizar notas</button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>

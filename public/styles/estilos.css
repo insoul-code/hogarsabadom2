@@ -238,13 +238,13 @@ footer{
     box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 13%);
 }
 
-.card-form .form-control, .card-form .form-select, .form-control{
+.card-form .form-control, .card-form .form-select, .form-control, .form-select{
     border: none !important;
     border-bottom: 1px solid #ccc !important;
     border-radius: 0px !important;
 }
 
-.card-form .form-control:focus, .card-form .form-select:focus, .form-control:focus{
+.card-form .form-control:focus, .card-form .form-select:focus, .form-control:focus, .form-select:focus{
     border-bottom: 2px solid #1AB975 !important;
     outline: none !important;
     background: #f7fffb !important;

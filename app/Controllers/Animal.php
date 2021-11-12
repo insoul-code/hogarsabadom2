@@ -115,7 +115,6 @@ class Animal extends BaseController{
         }
     }
 
-<<<<<<< HEAD
     public function filtro_animal(){
         $filtro=$this->request->getPost("tipo");
        
@@ -144,7 +143,6 @@ class Animal extends BaseController{
         }
     }
 
-=======
     public function editarNotes($id){
 
         $descripcion=$this->request->getPost("descripcion");
@@ -176,7 +174,6 @@ class Animal extends BaseController{
             return redirect()->to(site_url('/animales/listado'))->with('mensaje',$mensaje);
         }
     }
->>>>>>> fe6c86559351ed0e0f72719c2d99fe4ab9e90968
 }
 
 

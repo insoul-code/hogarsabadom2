@@ -89,8 +89,8 @@
         <?php endif ?>
         <div class="row mb-3">
             <div class="col-md-6">
-                <form action="<?= site_url('/producto/filtro')?>" method="POST">
-                    <select class="form-select w-50 mb-1" name="tipo">
+                <form action="<?= site_url('/producto/filtro')?>" method="POST" class="d-flex align-items-center">
+                    <select class="form-select" name="tipo">
                                     <option selected>Seleccione el tipo de animal</option>
                                     <option value="1">Perro</option>
                                     <option value="2">Gato</option>
@@ -99,7 +99,7 @@
                                     <option value="5">Reptil</option>
                                 </select>
                     <div class="col-md-6">
-                        <button class="btnbase btnprimary w-10">Filtrar</button>
+                        <button class="btnbase btnprimary ms-2">Filtrar</button>
                     </div>
                 </form>
             </div>

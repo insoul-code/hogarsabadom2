@@ -115,6 +115,36 @@ class Animal extends BaseController{
         }
     }
 
+<<<<<<< HEAD
+    public function filtro_animal(){
+        $filtro=$this->request->getPost("tipo");
+       
+        $modelo= new AnimalModelo();
+
+        $resultado = $modelo->where('tipo', $filtro)
+               ->findAll();
+
+        $animales=array("animales"=>$resultado);
+        return view('listaAnimales', $animales);
+    }
+
+    public function buscar_animales_filtro($tipo){
+        try{
+            $modelo= new AnimalModelo();
+
+            $resultado = $modelo->where('tipo', $tipo)
+                   ->findAll();
+
+            $animales=array("animales"=>$resultado);
+            return view('listaAnimales', $animales);
+
+        }catch(\Exception $error){
+            $mensaje=$error->getMessage();
+            return redirect()->to(site_url('/listaAnimales'))->with('mensaje',$mensaje);
+        }
+    }
+
+=======
     public function editarNotes($id){
 
         $descripcion=$this->request->getPost("descripcion");
@@ -146,4 +176,7 @@ class Animal extends BaseController{
             return redirect()->to(site_url('/animales/listado'))->with('mensaje',$mensaje);
         }
     }
+>>>>>>> fe6c86559351ed0e0f72719c2d99fe4ab9e90968
 }
+
+

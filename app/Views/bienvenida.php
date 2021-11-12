@@ -120,31 +120,31 @@
 				<div class="col-md-7">
 					<div class="d-flex justify-content-end">
 						<div class="card-cont-animal dog zoom">
-							<a href="">
+							<a href="<?= site_url('/animal/buscar/'.'1')?>">
 								<img src="<?= base_url('public/img/dog.png') ?>" alt="icono1" class="img-fluid">
 							</a>
 							<p class="text-center">Perros</p>
 						</div>
 						<div class="card-cont-animal cat zoom">
-							<a href="">
+							<a href="<?= site_url('/animal/buscar/'.'2')?>">
 								<img src="<?= base_url('public/img/cat.png') ?>" alt="icono1" class="img-fluid">
 							</a>
 							<p class="text-center">Gatos</p>
 						</div>
 						<div class="card-cont-animal bird zoom">
-							<a href="">
+							<a href="<?= site_url('/animal/buscar/'.'3')?>">
 								<img src="<?= base_url('public/img/bird.png') ?>" alt="icono1" class="img-fluid">
 							</a>
 							<p class="text-center">Aves</p>
 						</div>
 						<div class="card-cont-animal horse zoom">
-							<a href="">
+							<a href="<?= site_url('/animal/buscar/'.'4')?>">
 								<img src="<?= base_url('public/img/horse.png') ?>" alt="icono1" class="img-fluid">
 							</a>
 							<p class="text-center">Caballos</p>
 						</div>
 						<div class="card-cont-animal reptil zoom">
-							<a href="">
+							<a href="<?= site_url('/animal/buscar/'.'5')?>">
 								<img src="<?= base_url('public/img/reptil.png') ?>" alt="icono1" class="img-fluid">
 							</a>
 							<p class="text-center">Reptiles</p>

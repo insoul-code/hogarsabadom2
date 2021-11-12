@@ -118,4 +118,16 @@ class Producto extends BaseController{
             return redirect()->to(site_url('/productos'))->with('mensaje',$mensaje);
         }
     }
+
+    public function filtro_producto(){
+        $filtro=$this->request->getPost("tipo");
+       
+        $modelo= new ProductoModelo();
+
+        $resultado = $modelo->where('tipo', $filtro)
+               ->findAll();
+
+            $productos=array("productos"=>$resultado);
+            return view('listaProductos', $productos);
+    }
 }

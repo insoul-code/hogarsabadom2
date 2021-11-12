@@ -115,6 +115,7 @@ class Animal extends BaseController{
         }
     }
 
+<<<<<<< HEAD
     public function filtro_animal(){
         $filtro=$this->request->getPost("tipo");
        
@@ -143,6 +144,39 @@ class Animal extends BaseController{
         }
     }
 
+=======
+    public function editarNotes($id){
+
+        $descripcion=$this->request->getPost("descripcion");
+
+        // Se aplican validaciones
+        if($this->validate('formularioEdicionNotes')){
+            try{
+                //Sacar una copia de la clase
+                $modelo=new AnimalModelo();
+
+                //Armo el paquete de datos a registrar
+                $datos=array(
+                    "descripcion"=>$descripcion
+                );
+
+                //Agrego los datos
+                $modelo->update($id, $datos);
+
+                //Entrego una respuesta
+                $mensaje = "Nota agregada correctamente";
+                return redirect()->to(site_url('/animales/listado'))->with('mensajeCorrect',$mensaje);
+
+            }catch(\Exception $error){
+                $mensaje=$error->getMessage();
+                return redirect()->to(site_url('/animales/listado'))->with('mensajeIncorrect',$mensaje);
+            }
+        }else{
+            $mensaje="Campos sin llenar mi fai";
+            return redirect()->to(site_url('/animales/listado'))->with('mensaje',$mensaje);
+        }
+    }
+>>>>>>> fe6c86559351ed0e0f72719c2d99fe4ab9e90968
 }
 
 

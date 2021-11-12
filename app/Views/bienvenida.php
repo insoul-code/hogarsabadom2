@@ -56,6 +56,7 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
 							<p class="elipsis-text" title="<?= session('nameLogged') ?>"><?= session('nameLogged') ?></p>
+							<img src="<?= base_url('public/img/user.png') ?>" alt="">
 						</a>
 						<ul class="dropdown-menu">
 							<?php if(session('rolLogged') == 'admin'):?>

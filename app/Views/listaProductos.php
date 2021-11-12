@@ -46,6 +46,7 @@
 					<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
 							<p class="elipsis-text" title="<?= session('nameLogged') ?>"><?= session('nameLogged') ?></p>
+                            <img src="<?= base_url('public/img/user.png') ?>" alt="">
 						</a>
 						<ul class="dropdown-menu">
 							<?php if(session('rolLogged') == 'admin'):?>
@@ -53,7 +54,7 @@
 								<li><a class="dropdown-item" href="<?= site_url('/animales') ?>">Registrar animales</a></li>
 								<li><a class="dropdown-item" href="<?= site_url('users/list') ?>">Lista de usuarios</a></li>
 							<?php endif ?>
-							<li><a class="dropdown-item" href="#">Perfil</a></li>
+							<li><a class="dropdown-item" href="<?= site_url('users/profile') ?>">Perfil</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="<?= site_url('auth/logout'); ?>">Salir</a></li>
 						</ul>
@@ -200,6 +201,21 @@
                                             <div class="mb-3">
                                                 <label for="nombreproducto" class="form-label">Precio</label>
                                                 <input type="text" class="form-control" name="price" value="<?= $producto['precio']?>">
+                                            </div>
+                                            <div class="mb-4">
+                                            <label for="" class="form-label">Selecciona un tipo<span class="text-danger">*</span></label>
+                                            <select class="form-select" name="tipo">
+                                                <option selected>¿Para cuál animal es te producto?</option>
+                                                <option value="1">Perro</option>
+                                                <option value="2">Gato</option>
+                                                <option value="3">Ave</option>
+                                                <option value="4">Caballo</option>
+                                                <option value="5">Reptil</option>
+                                            </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="nombreproducto" class="form-label">Descripción</label>
+                                                <textarea name="descripcion" id="" cols="30" rows="5" class="form-control"><?= $producto['descripcion']?></textarea>
                                             </div>
                                             <div class="d-flex justify-content-end">
                                                 <button class="btnbase btnprimary" type="submit">Actualizar</button>

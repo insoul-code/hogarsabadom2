@@ -85,6 +85,8 @@ class Producto extends BaseController{
         //1. Recibir los datos del formulario
         $product=$this->request->getPost("product");
         $price=$this->request->getPost("price");
+        $type=$this->request->getPost("tipo");
+        $description=$this->request->getPost("descripcion");
 
         // Se aplican validaciones
         if($this->validate('formularioEdicion')){
@@ -95,7 +97,9 @@ class Producto extends BaseController{
                 //Armo el paquete de datos a registrar
                 $datos=array(
                     "nombre"=>$product,
-                    "precio"=>$price
+                    "precio"=>$price,
+                    "tipo"=>$type,
+                    "descripcion"=>$description
                 );
 
                 //Agrego los datos

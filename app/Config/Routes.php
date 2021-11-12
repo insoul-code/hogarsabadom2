@@ -45,6 +45,7 @@ $routes->post('/users/editar/(:num)', 'Users::editar/$1');
 $routes->get('/animal/buscar/(:num)', 'Animal::buscar_animales_filtro/$1');
 $routes->post('/animales/filtro', 'Animal::filtro_animal');
 $routes->post('/producto/filtro', 'Producto::filtro_producto');
+$routes->post('/animales/editarnotes/(:num)', 'Animal::editarNotes/$1');
 
 $routes->group('',['filter'=>'AuthCheck'], function($routes){
     $routes->get('/users', 'Users::index');

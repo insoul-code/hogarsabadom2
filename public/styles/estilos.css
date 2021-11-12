@@ -288,6 +288,15 @@ footer{
     color: #1ca86b;
 }
 
+.dropdown .nav-link img{
+    width: 24px;
+    margin: 0 0 0 10px;
+}
+
+.nav-item ul.dropdown-menu{
+    left: 50px;
+}
+
 .elipsis-text{
     width: 150px;
     overflow: hidden;
@@ -303,6 +312,26 @@ footer{
 .card-product .card{
     box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 13%);
     border: none;
+}
+
+.card-profile{
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 13%);
+    border: none;
+}
+
+.pets img, .products img{
+    width: 100px;
+}
+
+.items{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .alert h6{

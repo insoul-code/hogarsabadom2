@@ -54,7 +54,7 @@
 								<li><a class="dropdown-item" href="<?= site_url('/animales') ?>">Registrar animales</a></li>
 								<li><a class="dropdown-item" href="<?= site_url('users/list') ?>">Lista de usuarios</a></li>
 							<?php endif ?>
-							<li><a class="dropdown-item" href="#">Perfil</a></li>
+							<li><a class="dropdown-item" href="<?= site_url('users/profile') ?>">Perfil</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="<?= site_url('auth/logout'); ?>">Salir</a></li>
 						</ul>

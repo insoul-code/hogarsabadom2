@@ -32,8 +32,8 @@
                             <a class="nav-link active" href="<?= site_url('/animales/listado')?>">Animales</a>
                         </li>
                         <div class="only-mobile">
-                            <a href="#" class="btnbase btnlink m-3">Registro</a>
-                            <a href="#" class="btnbase btnprimary">Iniciar sesión</a>
+                        <a href="<?= site_url('auth/register')?>" class="btnbase btnlink m-3">Registro</a>
+							<a href="<?= site_url('auth')?>" class="btnbase btnprimary">Iniciar sesión</a>
                         </div>
                     </ul>
                 </div>
@@ -108,7 +108,7 @@
             <?php foreach($animales as $animal):?>
                 <div class="col card-product">
                     <div class="card h-100">
-                        <img src="<?= $animal['foto']?>" class="card-img-top h-100" alt="foto">
+                        <img src="<?= $animal['foto']?>" class="card-img-top h-100 w-100" alt="foto">
                         <div class="card-body">
                             <h5><?= $animal['nombre']?></h5>
                             <p>Edad: <?= $animal['edad']?></p>

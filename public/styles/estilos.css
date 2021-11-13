@@ -357,3 +357,45 @@ footer{
         font-size: 18px;
     }
 }
+
+@media screen and (max-width: 765px){
+    .column-responsive{
+        flex-direction: column;
+    }
+
+    .card-cont-animal{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 0 10px 0;
+    }
+
+    .fondoAdopcion{
+        display: none !important;
+    }
+
+    .carousel{
+        display: none;
+    }
+
+    .padding-mobile{
+        padding: 10px;
+    }
+
+    .margin-mobile{
+        margin-top: 25px;
+    }
+
+    .margin-bottom{
+        margin-bottom: 25px;
+    }
+
+    .height-mobile{
+        height: 100;
+        overflow: scroll;
+    }
+
+    .d-none{
+        display: none !important;
+    }
+}

@@ -35,8 +35,8 @@
                             <a class="nav-link" href="<?= site_url('/animales/listado')?>">Animales</a>
                         </li>
                         <div class="only-mobile">
-                            <a href="#" class="btnbase btnlink m-3">Registro</a>
-                            <a href="#" class="btnbase btnprimary">Iniciar sesión</a>
+                            <a href="<?= site_url('auth/register')?>" class="btnbase btnlink m-3">Registro</a>
+							<a href="<?= site_url('auth')?>" class="btnbase btnprimary">Iniciar sesión</a>
                         </div>
                     </ul>
                 </div>

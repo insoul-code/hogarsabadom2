@@ -120,11 +120,32 @@ class Animal extends BaseController{
        
         $modelo= new AnimalModelo();
 
-        $resultado = $modelo->where('tipo', $filtro)
-               ->findAll();
+        if($filtro != "" && $filtro != "1" && $filtro != "2" && $filtro != "3" 
+            && $filtro != "4" && $filtro != "5" ){
 
-        $animales=array("animales"=>$resultado);
-        return view('listaAnimales', $animales);
+            $resultado = $modelo->findAll();
+
+            $animales=array("animales"=>$resultado);
+            return view('listaAnimales', $animales);
+        }else{
+            if($filtro==""){
+                $resultado = $modelo->findAll();
+    
+                $animales=array("animales"=>$resultado);
+                return view('listaAnimales', $animales);
+    
+    
+            }else{
+    
+            $resultado = $modelo->where('tipo', $filtro)
+                   ->findAll();
+    
+                $animales=array("animales"=>$resultado);
+                return view('listaAnimales', $animales);
+            }
+        }
+
+
     }
 
     public function buscar_animales_filtro($tipo){

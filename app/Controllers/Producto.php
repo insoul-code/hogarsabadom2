@@ -122,19 +122,30 @@ class Producto extends BaseController{
     public function filtro_producto(){
         $filtro=$this->request->getPost("tipo");
         $modelo= new ProductoModelo();
-        if($filtro==""){
 
-            $resultado = $modelo->findAll();
-    
-                $productos=array("productos"=>$resultado);
-                return view('listaProductos', $productos);
+        if($filtro != "" && $filtro != "1" && $filtro != "2" && $filtro != "3" 
+        && $filtro != "4" && $filtro != "5" ){
+
+        $resultado = $modelo->findAll();
+
+        $productos=array("productos"=>$resultado);
+        return view('listaProductos', $productos);
+
         }else{
-          
-            $resultado = $modelo->where('tipo', $filtro)
-                   ->findAll();
-    
-                $productos=array("productos"=>$resultado);
-                return view('listaProductos', $productos);
+            if($filtro==""){
+
+                $resultado = $modelo->findAll();
+        
+                    $productos=array("productos"=>$resultado);
+                    return view('listaProductos', $productos);
+            }else{
+              
+                $resultado = $modelo->where('tipo', $filtro)
+                       ->findAll();
+        
+                    $productos=array("productos"=>$resultado);
+                    return view('listaProductos', $productos);
+            }
         }
 
     }

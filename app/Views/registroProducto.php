@@ -35,8 +35,28 @@
                             <a class="nav-link" href="<?= site_url('/animales/listado')?>">Animales</a>
                         </li>
                         <div class="only-mobile">
-                            <a href="#" class="btnbase btnlink m-3">Registro</a>
-                            <a href="#" class="btnbase btnprimary">Iniciar sesión</a>
+                            <?php if(!session('loggedUser')):?>
+                                <a href="<?= site_url('auth/register')?>" class="btnbase btnlink m-3">Registro</a>
+                                <a href="<?= site_url('auth')?>" class="btnbase btnprimary">Iniciar sesión</a>
+                            <?php endif ?>
+                            <?php if(session('loggedUser')):?>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                        <p class="elipsis-text" title="<?= session('nameLogged') ?>"><?= session('nameLogged') ?></p>
+                                        <img src="<?= base_url('public/img/user.png') ?>" alt="">
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <?php if(session('rolLogged') == 'admin'):?>
+                                            <li><a class="dropdown-item" href="<?= site_url('/productos') ?>">Registrar productos</a></li>
+                                            <li><a class="dropdown-item" href="<?= site_url('/animales') ?>">Registrar animales</a></li>
+                                            <li><a class="dropdown-item" href="<?= site_url('users/list') ?>">Lista de usuarios</a></li>
+                                        <?php endif ?>
+                                        <li><a class="dropdown-item" href="<?= site_url('users/profile') ?>">Perfil</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="<?= site_url('auth/logout'); ?>">Salir</a></li>
+                                    </ul>
+                                </li>
+                            <?php endif ?>
                         </div>
                     </ul>
                 </div>
@@ -69,9 +89,9 @@
     </header>
     <section class="mb-4">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center column-responsive">
                 <h2 class="my-4">Registro de productos</h2>
-                <a href="<?= site_url('/productos/listado')?>" class="btnbase btnprimary-outline"><i class="fas fa-list-ul me-2"></i>Ver inventario</a>
+                <a href="<?= site_url('/productos/listado')?>" class="btnbase btnprimary-outline margin-bottom"><i class="fas fa-list-ul me-2"></i>Ver inventario</a>
             </div>
             <div class="card-form">
             <div class="row align-items-center">
@@ -116,11 +136,11 @@
                             <label class="form-label">Añade una descripción del producto<span class="text-danger">*</span></label>
                             <textarea class="form-control" name="description" rows="3"></textarea>
                         </div>
-                        <button class="btnbase btnprimary w-100">Registrar producto</button>
+                        <button class="btnbase btnprimary w-100 margin-bottom">Registrar producto</button>
                     </form>
                 </div>
-                <div class="col-md-6 text-center">
-                    <img class="w-70" src="<?= base_url('public/img/productos.png')?>" alt="">
+                <div class="col-md-6 text-center margin-mobile">
+                    <img class="w-100" src="<?= base_url('public/img/productos.png')?>" alt="">
                 </div>
         </div>
         </div>

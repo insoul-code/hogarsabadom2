@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="height-mobile">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,19 +9,19 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap" rel="stylesheet">
 </head>
-<body class="bg-auth">
+<body class="bg-auth padding-mobile height-mobile">
     <div class="container">
         <div class="row justify-content-center align-items-center content-align">
         <div class="col-md-4">
-                <a href="<?= site_url('/')?>">
-                    <img src="<?= base_url('public/img/pawshome-logo2.png') ?>" class="mb-3" alt="Logo PawHome">
+                <a href="<?= site_url('/')?>" class="d-none">
+                    <img src="<?= base_url('public/img/pawshome-logo2.png') ?>" class="mb-3 margin-mobile" alt="Logo PawHome">
                 </a>
                 <h1>Registrate</h1>
                 <p>Registrate para tener una experiencia diferenciadora.</p>
                 <a  href="<?= site_url('/')?>" class="btnbase btnprimary-outline"><i class="fas fa-home  me-2"></i>Volver al home</a>
             </div>
             <div class="col-md-4">
-                <div class="card-form p-3">
+                <div class="card-form p-3 margin-mobile margin-bottom">
                     <form action="<?= base_url('auth/save');?>" method="POST" autocomplete="off">
                     <?= csrf_field();?>
                     <?php if(!empty(session()->getFlashdata('fail'))) : ?>

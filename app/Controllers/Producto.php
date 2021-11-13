@@ -46,7 +46,7 @@ class Producto extends BaseController{
                 return redirect()->to(site_url('/productos'))->with('mensaje',$mensaje);
             }
         }else{
-            $mensaje="Campos sin llenar mi fai";
+            $mensaje="Campos sin llenar, todos los campos son obligatorios";
             return redirect()->to(site_url('/productos'))->with('mensaje',$mensaje);
         }
     }
@@ -114,7 +114,7 @@ class Producto extends BaseController{
                 return redirect()->to(site_url('/productos/listado'))->with('mensajeIncorrect',$mensaje);
             }
         }else{
-            $mensaje="Campos sin llenar mi fai";
+            $mensaje="Campos sin llenar, todos los campos son obligatorios";
             return redirect()->to(site_url('/productos'))->with('mensaje',$mensaje);
         }
     }

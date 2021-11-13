@@ -92,6 +92,7 @@
                 <form action="<?= site_url('/animales/filtro')?>" method="POST" class="d-flex align-items-center">
                     <select class="form-select" name="tipo">
                                     <option selected>Seleccione el tipo de animal</option>
+                                    <option value="">Todos</option>
                                     <option value="1">Perro</option>
                                     <option value="2">Gato</option>
                                     <option value="3">Ave</option>

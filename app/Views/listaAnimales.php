@@ -32,8 +32,28 @@
                             <a class="nav-link active" href="<?= site_url('/animales/listado')?>">Animales</a>
                         </li>
                         <div class="only-mobile">
-                        <a href="<?= site_url('auth/register')?>" class="btnbase btnlink m-3">Registro</a>
-							<a href="<?= site_url('auth')?>" class="btnbase btnprimary">Iniciar sesión</a>
+                            <?php if(!session('loggedUser')):?>
+                                <a href="<?= site_url('auth/register')?>" class="btnbase btnlink m-3">Registro</a>
+                                <a href="<?= site_url('auth')?>" class="btnbase btnprimary">Iniciar sesión</a>
+                            <?php endif ?>
+                            <?php if(session('loggedUser')):?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    <p class="elipsis-text" title="<?= session('nameLogged') ?>"><?= session('nameLogged') ?></p>
+                                    <img src="<?= base_url('public/img/user.png') ?>" alt="">
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <?php if(session('rolLogged') == 'admin'):?>
+                                        <li><a class="dropdown-item" href="<?= site_url('/productos') ?>">Registrar productos</a></li>
+                                        <li><a class="dropdown-item" href="<?= site_url('/animales') ?>">Registrar animales</a></li>
+                                        <li><a class="dropdown-item" href="<?= site_url('users/list') ?>">Lista de usuarios</a></li>
+                                    <?php endif ?>
+                                    <li><a class="dropdown-item" href="<?= site_url('users/profile') ?>">Perfil</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="<?= site_url('auth/logout'); ?>">Salir</a></li>
+                                </ul>
+                            </li>
+                            <?php endif ?>
                         </div>
                     </ul>
                 </div>
@@ -65,10 +85,10 @@
         </nav>
     </header>
     <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center column-responsive">
             <h2 class="my-4">Listado de animales</h2>
             <?php if(session('rolLogged') == 'admin'):?>
-                <a href="<?= site_url('/animales')?>" class="btnbase btnprimary-outline"><i class="fas fa-plus-circle me-2"></i>Registrar animal</a>
+                <a href="<?= site_url('/animales')?>" class="btnbase btnprimary-outline margin-bottom"><i class="fas fa-plus-circle me-2"></i>Registrar animal</a>
             <?php endif ?>
         </div>
         <?php 
